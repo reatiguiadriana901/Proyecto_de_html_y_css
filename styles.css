@@ -1,6 +1,6 @@
 /*variables*/
 :root{
-    --cherry:#d42d3b;
+    --cherry:#ade3cc;
     --blue-dark:#000022;
     --white-old:#FFEEDB;
     --blue-clear:#cd9ce0;
@@ -43,6 +43,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 1.5rem;
+    margin-top: 3rem;
 }
 
 .header_title h1{
@@ -68,9 +69,13 @@
 
 }
 
+.button_text{
+    text-decoration: none;
+    color: var(--blue-dark);
+}
 .header_image {
-    width: 40%;
-    height: 40%;
+    width: 80%;
+    height: 70%;
    
 
 }
@@ -179,7 +184,9 @@
     text-decoration: none;
     color: var(--white-old);
 }
+
 .footer_rights p{
     margin: 0;
-    color:var(--white-old)
+    color:var(--white-old);
 }
+

@@ -1,0 +1,232 @@
+:root{
+    --cherry:#ade3cc;
+    --blue-dark:#000022;
+    --white-old:#FFEEDB;
+    --blue-clear:#cd9ce0;
+    --Terracota:#B26E63;
+    --gris:#b2b2b2;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.grid_general {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    ;
+
+}
+
+.header {
+    grid-area: header;
+    height: 20vh;
+    display:grid;
+    grid-template-rows: 2fr 1fr;
+    background-color: var(--cherry);
+
+}
+
+.header_logo {
+    width: 40%;
+    height: auto;
+    background-color: var(--cherry);
+    margin: 0 auto;
+    background-image: url(./assets/logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+
+.nav_opciones ol{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav_text{
+    text-decoration: none;
+    font-size: 0.7rem;
+    color:var(--blue-dark);
+}
+
+.nav_text_2{
+    text-decoration: none;
+    font-size: 0.7rem;
+    color:black;
+    border: 2px solid var(--blue-dark);
+    padding: 0.4rem;
+    border-radius: 10px;
+
+}
+
+.main{
+    grid-area: main;
+    background: var(--blue-dark);
+    width: auto;
+    height: 80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_container{
+    width: 95%;
+    height: 95%;
+    background-color: var(--white-old);
+    border-radius: 10px;
+}
+
+.main_pasos p{
+    font-size: 0.7rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.pasos_seleccion{
+    width: 100%;
+    height: 2rem;
+    background: ;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:1.5rem;
+
+}
+
+.circulo1{
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: var(--white-old);
+    border: 2px solid var(--blue-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.circulo_interno{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--blue-dark);
+}
+
+.circulo{
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-color: var(--white-old);
+    border: 2px solid var(--gris)
+}
+
+.linea1{
+    height: 2px;
+    background-color:var(--blue-dark);
+    content:'';
+    flex:1;
+}
+
+.linea{
+    height: 2px;
+    background-color:var(--blue-dark);
+    content:'';
+    flex:1;
+    background-color: var(--gris);
+}
+
+.main_title {
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+.main_cards{
+    height: 51vh;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background: var(--blue-dark);
+    gap:1rem;
+    justify-items: center;
+    padding: 0.9rem 0rem 0.9rem 0rem;
+    
+}
+
+.card{
+    width: 85%;
+    background-color: var(--cherry);
+    border: 3px solid var(--white-old);
+    border-radius: 1.5rem;
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    
+
+}
+
+.card_icon{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-old);
+    border:3px solid var(--white-old);
+    border-radius: 1.5rem;
+    grid-row-end: auto;
+
+}
+
+.card_icon i{
+    font-size:3rem ;
+}
+
+.card_text{
+    display:grid;
+    grid-template-rows: 0.5fr 1fr 1.5fr;
+}
+
+.title_card{
+    font-size: 0.7rem;
+    display:flex;
+    justify-content: center;
+    align-self: center;
+    
+}
+
+.text_card p{
+    font-size: 0.8rem;
+    text-align: center;   
+}
+
+
+.checkbox{
+    display: flex;
+    justify-content: end;
+    margin-right: 1rem;
+    padding-top: 0.4rem;
+}
+
+.buttons{
+    height: 3.6rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:4rem;
+}
+
+.button{
+    border: 2px solid var(--blue-dark);
+    padding: 0.5rem;
+    border-radius:1rem ;
+    background-color: var(--gris);
+}
+
+.button_text{
+    text-decoration: none;
+    color: var(--blue-dark);
+}

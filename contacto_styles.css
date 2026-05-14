@@ -1,0 +1,46 @@
+:root{
+    --cherry:#ade3cc;
+    --blue-dark:#000022;
+    --white-old:#FFEEDB;
+    --blue-clear:#cd9ce0;
+    --Terracota:#B26E63;
+    --gris:#b2b2b2;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid_general {
+    display:grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+    ;
+}
+
+.header{
+    grid-area: header;
+    height: 20vh;
+    background: #ade3cc;
+}
+
+
+
+main{
+    grid-area: main;
+    height: 70vh;
+    background: #000022;
+}
+
+
+
+.footer{
+    grid-area: footer;
+    height: 10vh;
+    background: #FFEEDB;
+}
