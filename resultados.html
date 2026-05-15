@@ -3,24 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resultados</title>
     <link rel="stylesheet" href="resultados.css">
 </head>
 <body class="grid_general">
 
     <header class="header">
-
+        <div class="header_container">
+            <div class="header_logo"></div>
+            <div class="header_nav">
+                <nav class="nav">
+                    <ol>
+                        <li><a href="./hola.html" class="nav_text"><strong>Home</strong></a></li>
+                        <li><a href="./hola.html" class="nav_text"><strong>Estimator</strong></a></li>
+                        <li><a href="./hola.html" class="nav_text"><strong>Reports</strong></a></li>
+                        <li><a href="./hola.html" class="nav_text"><strong>Contact</strong></a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
     </header>
 
-
     <main class="main">
+        <section class="main_container">
 
+            <div class="main_title">
+                <h1>Simulated Software Development Cost Breakdown</h1>
+            </div>
+
+            <div class="main_graph">
+
+                <div class="graph_title">
+                    <p>Total Estimated Cost: $125,000</p>
+                </div>
+
+                <div class="graphs_grid">
+
+                    <div class="card_graph card_design">
+                        <div class="text_graph"><p>Design: $20,000 (16%)</p></div>
+                        <div class="line_background">
+                            <div class="line_filler" style="width: 16%"><span>16%</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card_graph card_frontend">
+                        <div class="text_graph"><p>Frontend Dev: $45,000 (36%)</p></div>
+                        <div class="line_background">
+                            <div class="line_filler" style="width: 36%"><span>36%</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card_graph card_backend">
+                        <div class="text_graph"><p>Backend Dev: $40,000 (32%)</p></div>
+                        <div class="line_background">
+                            <div class="line_filler" style="width: 32%"><span>32%</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card_graph card_testing">
+                        <div class="text_graph"><p>Testing & QA: $20,000 (16%)</p></div>
+                        <div class="line_background">
+                            <div class="line_filler" style="width: 16%"><span>16%</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="main_table">
+                <div class="table_title"><p>Detailed Cost Breakdown</p></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Hours</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Design</td>
+                            <td>UX/UI, Wireframing, Prototyping</td>
+                            <td>160</td>
+                            <td>$20,000</td>
+                        </tr>
+                        <tr>
+                            <td>Frontend</td>
+                            <td>React, HTML/CSS, Responsive</td>
+                            <td>360</td>
+                            <td>$45,000</td>
+                        </tr>
+                        <tr>
+                            <td>Backend</td>
+                            <td>Node.js, Database, API</td>
+                            <td>320</td>
+                            <td>$40,000</td>
+                        </tr>
+                        <tr>
+                            <td>Testing</td>
+                            <td>Manual & Automated Testing</td>
+                            <td>160</td>
+                            <td>$20,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="download">
+                <button class="btn_download">📄 Download Report (PDF)</button>
+            </div>
+
+        </section>
     </main>
 
     <footer class="footer">
-
-
+        <div class="footer_container">
+            <p>© 2024 CostEstimator. All rights reserved.</p>
+        </div>
     </footer>
-    
+
 </body>
 </html>

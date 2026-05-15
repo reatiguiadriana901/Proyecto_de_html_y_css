@@ -1,45 +1,229 @@
-:root{
-    --cherry:#ade3cc;
+/* ════════════════════════════
+   VARIABLES Y RESET
+════════════════════════════ */
+:root {
+    --cherry:#a5f8df;
     --blue-dark:#000022;
-    --white-old:#FFEEDB;
+    --white-old:#fcf6f0;
     --blue-clear:#cd9ce0;
-    --Terracota:#B26E63;
-    --gris:#b2b2b2;
-
+    --Terracota:#d1b4d9;
+    --gris:#aa9da4;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.grid_general{
+/* ════════════════════════════
+   LAYOUT GENERAL
+════════════════════════════ */
+.grid_general {
+    min-height: 100vh;
     display: grid;
-    grid-template-areas: 
-    "header"
-    "main"
-    "footer"
-    ;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    background: var(--white-old);
 }
 
-.header{
+/* ════════════════════════════
+   HEADER
+════════════════════════════ */
+.header {
     grid-area: header;
-    height: 20vh;
-    background: #000022;
-
+    background: var(--Terracota);
 }
 
-.main{
+.header_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 1.5rem;
+}
+
+.header_logo {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    background-image: url(./assets/logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nav ol {
+    display: flex;
+    flex-direction: row;
+    gap: 1.4rem;
+    list-style: none;
+    font-size: 0.8rem;
+}
+
+.nav_text {
+    text-decoration: none;
+    color: var(--blue-dark);
+}
+
+/* ════════════════════════════
+   MAIN
+════════════════════════════ */
+main {
     grid-area: main;
-    height: 70vh;
-    background-color: #FFEEDB;
-
+    width: 100%;
+    background: var(--white-old);
+    
 }
 
-.footer{
+.main_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 1.2rem;
+    background: var(--white-old);
+}
+
+/* ── Título principal ── */
+.main_title h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    text-align: center;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--gris);
+}
+
+/* ── Gráficas ── */
+.graph_title p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.graphs_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.card_graph {
+    border-radius: 12px;
+    padding: 0.8rem;
+    color: var(--blue-dark);
+}
+
+.card_design   { background: linear-gradient(135deg, #a0dacd, #a6c4f4); }
+.card_frontend { background: linear-gradient(135deg, #c0b0ef, #f6d9b9); }
+.card_backend  { background: linear-gradient(135deg, #c2b0f7, #ea9d99); }
+.card_testing  { background: linear-gradient(135deg, #97b6e8, #e3b8f8); }
+
+.text_graph p {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.line_background {
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    height: 20px;
+}
+
+.line_filler {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #333;
+    min-width: 32px;
+}
+
+/* ── Tabla ── */
+.main_table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.table_title p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    padding: 0.3rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+}
+
+th {
+    background: var(--blue-dark);
+    color: var(--white-old);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+td {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--gris);
+    color: var(--blue-dark);
+}
+
+tr:nth-child(even) {
+    background: rgba(0, 0, 34, 0.05);
+}
+
+/* ── Botón descarga ── */
+.download {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn_download {
+    background: var(--blue-dark);
+    color: var(--white-old);
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ════════════════════════════
+   FOOTER
+════════════════════════════ */
+.footer {
     grid-area: footer;
-    height: 10vh;
-    background: #ade3cc;
-
+    height: 9vh;
+    background: var(--Terracota);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.footer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+}
+
+

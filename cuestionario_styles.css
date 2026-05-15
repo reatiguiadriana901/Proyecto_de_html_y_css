@@ -1,10 +1,10 @@
 :root{
-    --cherry:#ade3cc;
+    --cherry:#a5f8df;
     --blue-dark:#000022;
-    --white-old:#FFEEDB;
+    --white-old:#fcf6f0;
     --blue-clear:#cd9ce0;
-    --Terracota:#B26E63;
-    --gris:#b2b2b2;
+    --Terracota:#d1b4d9;
+    --gris:#aa9da4;
 
 }
 
@@ -26,17 +26,16 @@
 
 .header {
     grid-area: header;
-    height: 20vh;
+    height: 18vh;
     display:grid;
-    grid-template-rows: 2fr 1fr;
-    background-color: var(--cherry);
+    grid-template-columns: 1fr 2fr;
+    background-color: var(--Terracota);
 
 }
 
 .header_logo {
-    width: 40%;
-    height: auto;
-    background-color: var(--cherry);
+    width: 30%;
+    background-color: var(--Terracota);
     margin: 0 auto;
     background-image: url(./assets/logo.png);
     background-position: center;
@@ -48,22 +47,29 @@
 .nav_opciones ol{
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1rem;
     list-style: none;
+    padding-top: 3rem ;
+    padding-right: 1rem;
 }
 
 .nav_text{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    list-style: none;
+    font-size: 0.6rem;
     text-decoration: none;
-    font-size: 0.7rem;
-    color:var(--blue-dark);
+    color: var(--blue-dark);
 }
 
 .nav_text_2{
     text-decoration: none;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color:black;
     border: 2px solid var(--blue-dark);
-    padding: 0.4rem;
+    padding: 0.3rem;
     border-radius: 10px;
 
 }
@@ -72,7 +78,7 @@
     grid-area: main;
     background: var(--blue-dark);
     width: auto;
-    height: 80vh;
+    height: 82vh;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -146,13 +152,14 @@
 .main_title {
     text-align: center;
     font-size: 0.6rem;
+    padding-bottom: 0.6rem;
 }
 
 .main_cards{
     height: 51vh;
     display:grid;
     grid-template-rows: 1fr 1fr 1fr;
-    background: var(--blue-dark);
+    background: var(--white-old);
     gap:1rem;
     justify-items: center;
     padding: 0.9rem 0rem 0.9rem 0rem;
@@ -161,7 +168,7 @@
 
 .card{
     width: 85%;
-    background-color: var(--cherry);
+    background-color: var(--blue-dark);
     border: 3px solid var(--white-old);
     border-radius: 1.5rem;
     display:grid;
@@ -174,8 +181,8 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--white-old);
-    border:3px solid var(--white-old);
+    background-color: var(--Terracota);
+    border:3px solid var(--blue-dark);
     border-radius: 1.5rem;
     grid-row-end: auto;
 
@@ -188,6 +195,7 @@
 .card_text{
     display:grid;
     grid-template-rows: 0.5fr 1fr 1.5fr;
+    color: var(--white-old);
 }
 
 .title_card{
@@ -223,7 +231,7 @@
     border: 2px solid var(--blue-dark);
     padding: 0.5rem;
     border-radius:1rem ;
-    background-color: var(--gris);
+    background-color: var(--Terracota);
 }
 
 .button_text{
