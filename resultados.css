@@ -1,11 +1,13 @@
 /* VARIABLES Y RESET */
 :root {
-    --cherry: #a5f8df;
-    --blue-dark: #000022;
-    --white-old: #fcf6f0;
-    --blue-clear: #cd9ce0;
-    --Terracota: #d1b4d9;
-    --gris: #aa9da4;
+    --cherry:    #a4e5c2;  
+    --blue-dark: #000022;  
+    --white-old: #faf0dd;  
+    --blue-clear:#f2b8b8;  
+    --Terracota: #b9beeb;  
+    --gris:#929399;
+
+
 }
 
 * {
@@ -85,6 +87,7 @@ main {
     padding: 1.2rem;
     gap: 1.2rem;
     background: var(--white-old);
+
 }
 
 
@@ -223,6 +226,7 @@ tbody tr:hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     position: relative;
     overflow: hidden;
+    margin-top: 2rem;
 }
 
 /* hover en botón */
@@ -371,16 +375,20 @@ tbody tr:hover {
         width: 55px;
         height: 55px;
     }
+ 
 
     .nav ol {
         font-size: 1.1rem;
         gap: 2rem;
     }
 
+    .main{
+        padding: 2rem;
+    }
+
     .main_container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
+        max-width: 1400px;
+        padding: 2rem 2rem;
         gap: 2.5rem;
     }
 

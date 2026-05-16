@@ -1,13 +1,12 @@
-/* ════════════════════════════
-   VARIABLES Y RESET
-════════════════════════════ */
+/* VARIABLES Y RESET */
 :root {
-    --cherry: #a5f8df;
-    --blue-dark: #000022;
-    --white-old: #fcf6f0;
-    --blue-clear: #cd9ce0;
-    --Terracota: #d1b4d9;
-    --gris: #aa9da4;
+    --cherry:    #a4e5c2;  
+    --blue-dark: #000022;  
+    --white-old: #faf0dd;  
+    --blue-clear:#f2b8b8;  
+    --Terracota: #b9beeb;  
+    --gris:#929399;
+
 }
 
 * {
@@ -16,9 +15,7 @@
     box-sizing: border-box;
 }
 
-/* ════════════════════════════
-   LAYOUT GENERAL
-════════════════════════════ */
+/*  LAYOUT GENERAL */
 .grid_general {
     min-height: 100vh;
     display: grid;
@@ -29,9 +26,7 @@
         "footer";
 }
 
-/* ════════════════════════════
-   HEADER
-════════════════════════════ */
+/*HEADER */
 .header {
     grid-area: header;
     background: var(--Terracota);
@@ -72,14 +67,12 @@
     transition: opacity 0.2s ease;
 }
 
-/* AGREGADO: hover nav */
+
 .nav_text:hover {
     opacity: 0.6;
 }
 
-/* ════════════════════════════
-   MAIN
-════════════════════════════ */
+/*  MAIN */
 main {
     grid-area: main;
     width: 100%;
@@ -171,11 +164,10 @@ main {
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
-    /* AGREGADO: transición hover en el form */
     transition: box-shadow 0.3s ease;
 }
 
-/* AGREGADO: hover suave en el formulario */
+
 .form:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 34, 0.15);
 }
@@ -197,26 +189,25 @@ main {
     justify-content: center;
     width: 98%;
     padding: 0.4rem;
-    /* AGREGADO: borde y transición en inputs */
     border: 2px solid var(--gris);
     border-radius: 6px;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Campo válido — cuando tiene contenido correcto */
+
 .box:valid {
     border-color: var(--cherry);
     box-shadow: 0 0 0 3px rgba(165, 248, 223, 0.35);
 }
 
-/* Campo inválido — cuando está vacío o mal escrito Y ya fue tocado */
+
 .box:invalid:not(:placeholder-shown) {
     border-color: #e05c5c;
     box-shadow: 0 0 0 3px rgba(224, 92, 92, 0.2);
 }
 
-/* AGREGADO: focus en inputs */
+
 .box:focus {
     border-color: var(--blue-dark);
     box-shadow: 0 0 0 3px rgba(0, 0, 34, 0.1);
@@ -231,13 +222,12 @@ main {
     border-radius: 5px;
     padding: 0.4rem 0;
     cursor: pointer;
-    /* AGREGADO: transición hover botón enviar */
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     position: relative;
     overflow: hidden;
 }
 
-/* AGREGADO: hover botón enviar */
+
 .form_enviar:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 34, 0.2);
@@ -249,7 +239,7 @@ main {
     box-shadow: none;
 }
 
-/* AGREGADO: brillo deslizante en botón enviar */
+
 .form_enviar::after {
     content: '';
     position: absolute;
@@ -266,7 +256,6 @@ main {
     left: 125%;
 }
 
-/* ── Recursos ── */
 .resources {
     display: flex;
     flex-direction: column;
@@ -285,18 +274,17 @@ main {
     display: flex;
     gap: 1rem;
     width: 100%;
-    background-color: var(--blue-dark);
+    background-color: var(--cherry);
     padding: 1.5rem;
     border: 3px solid var(--Terracota);
-    color: var(--white-old);
+    color: var(--blue-dark);
     border-radius: 20px;
     font-size: 0.9rem;
-    /* AGREGADO: transición hover cards */
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     cursor: pointer;
 }
 
-/* AGREGADO: hover cards recursos */
+
 .card:hover {
     transform: translateX(6px);
     box-shadow: 0 6px 20px rgba(0, 0, 34, 0.25);
@@ -307,9 +295,7 @@ main {
     font-size: 1.2rem;
 }
 
-/* ════════════════════════════
-   FOOTER
-════════════════════════════ */
+/*FOOTER */
 .footer {
     grid-area: footer;
     height: 9vh;
@@ -327,7 +313,6 @@ main {
     font-size: 0.8rem;
 }
 
-/* AGREGADO: hover íconos footer */
 .footer_icon i {
     margin: 0 0.3rem;
     cursor: pointer;
@@ -339,12 +324,10 @@ main {
     opacity: 0.7;
 }
 
-/* ════════════════════════════
-   TABLET — min-width: 768px
-════════════════════════════ */
+/* TABLET — min-width: 768px */
 @media (min-width: 768px) {
 
-    /* CORREGIDO: logo más pequeño para que no desborde */
+   
     .header {
         min-height: 70px;
         padding: 0;
@@ -356,7 +339,7 @@ main {
     }
 
     .header_logo {
-        /* CORREGIDO: era 9rem, desbordaba el header */
+        
         width: 50px;
         height: 50px;
     }
@@ -413,16 +396,12 @@ main {
         font-size: 1.3rem;
     }
 
-    /* CORREGIDO: era "font-size: 8rem," — coma en lugar de punto y coma, rompía el CSS */
+   
     .footer_text p {
         font-size: 1.1rem;
     }
 }
 
-/* ════════════════════════════
-   DESKTOP — min-width: 1024px
-   AGREGADO: este bloque es nuevo
-════════════════════════════ */
 @media (min-width: 1024px) {
 
     .header {
@@ -476,7 +455,7 @@ main {
         font-size: 1.3rem;
     }
 
-    /* En desktop el form y recursos van en dos columnas */
+   
     .main_form {
         padding: 2rem;
     }
