@@ -1,201 +1,445 @@
-/*variables*/
-:root{
-    --cherry:#a5f8df;
-    --blue-dark:#000022;
-    --white-old:#fcf6f0;
-    --blue-clear:#cd9ce0;
-    --Terracota:#d1b4d9;
+/* ════════════════════════════
+   VARIABLES Y RESET
+════════════════════════════ */
+:root {
+:root {
+    --cherry:    #b0f7da;
+    --blue-dark: #1a0a14;
+    --white-old: #fff0f5;
+    --blue-clear:#d9b8f0;
+    --Terracota: #f7c5d5;
+}
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-.header{
+/* ════════════════════════════
+   HEADER
+════════════════════════════ */
+.header {
     width: 100%;
-    height: 50vh;
-    background: linear-gradient(160deg, var(--Terracota) 90%, var(--cherry) 10%);
+    /* CORREGIDO: eliminado height: 50vh fijo, ahora crece con el contenido */
+    min-height: 40vh;
+    background: linear-gradient(160deg, var(--Terracota) 0%, var(--cherry) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
-.header_container{
+.header_container {
     width: 100%;
     height: 100%;
-    background: linear-gradient(160deg, var(--Terracota) 0%, var(--cherry)  100%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
+    padding: 2rem 0;
 }
 
 .header_central {
     width: 90%;
-    height: 50%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 1.5rem;
-    margin-top: 3rem;
+    padding: 1.5rem 0 1.5rem 1.5rem;
 }
 
-.header_title h1{
-    font-size: 1.2rem;
+.header_title h1 {
+    font-size: 1rem;
     text-align: center;
     color: var(--blue-dark);
+    padding: 0 0 0 2rem;
 }
 
-.header_subtitle p{
+.header_subtitle p {
     font-size: 0.8rem;
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 0 0 2rem;
     color: var(--blue-dark);
 }
 
 .header_button {
     display: flex;
     justify-content: center;
-
-}
-.header_button button{
-    font-size: 0.6rem;
-    border-radius: 20px;
-    padding: 4px;
-
+    padding: 1rem 0 0 0;
 }
 
-.button_text{
+/* CORREGIDO: el botón ahora es el <a> directamente, sin <button> */
+.button_text {
+    display: inline-block;
     text-decoration: none;
     color: var(--blue-dark);
+    background: var(--white-old);
+    border: 2px solid var(--blue-dark);
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.button_text:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 34, 0.2);
+    background: var(--Terracota);
+}
+
+.button_text:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.button_text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    transform: skewX(-20deg);
+    transition: left 0.4s ease;
+}
+
+.button_text:hover::after {
+    left: 125%;
+}
+
 .header_image {
     width: 30%;
-    height: 30%;
-
+    margin-top: 1rem;
 }
 
-
-.header_image img{
+.header_image img {
     width: 100%;
     height: 100%;
 }
 
-.main{
-    width: 100vw;
-    height: 100vh;
+/* ════════════════════════════
+   MAIN
+════════════════════════════ */
+.main {
+    width: 100%;
+    /* CORREGIDO: eliminado height fijo */
     background: var(--white-old);
 }
 
-
-.main_container{
+.main_container {
     width: 100%;
-    height: 100%;
     background-color: var(--white-old);
+    padding-bottom: 2rem;
 }
 
-.main_beneficios{
+.main_beneficios {
     width: 100%;
-    height: 10%;
+    /* CORREGIDO: eliminado height: 10% que no funciona sin padre con altura definida */
     background-color: var(--white-old);
-    font-size: 0.7rem;
     text-align: center;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
+    padding: 3rem 2rem 0 2rem;
 }
 
-.cards_beneficios{
-    width: 100vw;
-    height: 80vh;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0.9rem;
-    padding: 0.7rem;
+.main_beneficios h2 {
+    font-family: 'Diplomata', serif;
+    font-size: 0.7rem;
+}
 
+.cards_beneficios {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }
 
 .card {
-    border:3px solid var(--blue-dark);
-    border-radius:30px;
+    border: 3px solid var(--blue-dark);
+    border-radius: 30px;
     background: var(--Terracota);
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    
+    padding: 2rem;
+    /* AGREGADO: transición hover cards */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
 }
 
-.card_icon{
+/* AGREGADO: hover cards beneficios */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 34, 0.18);
+}
+
+.card_icon {
     font-size: 2rem;
+    /* AGREGADO: animación del ícono en hover */
+    transition: transform 0.3s ease;
 }
 
-.card_title{
+.card:hover .card_icon {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.card_title {
     font-size: 0.8rem;
     color: var(--blue-dark);
+    margin-top: 0.5rem;
 }
 
-.card_description{
+.card_description {
     font-size: 0.9rem;
     color: var(--blue-dark);
+    text-align: center;
+    margin-top: 0.3rem;
 }
 
-.footer{
-    width: 100vw;
-    height: 20vh;
+/* ════════════════════════════
+   FOOTER
+════════════════════════════ */
+.footer {
+    width: 100%;
+    /* CORREGIDO: eliminado height: 20vh fijo */
+    min-height: 80px;
     background: var(--Terracota);
 }
 
-.footer_container{
+.footer_container {
     width: 100%;
     height: 100%;
     background-color: var(--Terracota);
+    display: flex;
+    flex-direction: column;
 }
 
-.footer_rights{
+.footer_rights {
     width: 100%;
-    height: 40%;
+    /* CORREGIDO: eliminado height: 40% sin padre definido */
     background-color: var(--Terracota);
     text-align: center;
     font-size: 0.7rem;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding: 0.8rem 1rem;
 }
 
-.footer_nav{
-    width:100%;
-    height:60%;
+.footer_rights p {
+    margin: 0;
+    color: var(--blue-dark);
+}
+
+.footer_nav {
+    width: 100%;
     background-color: var(--Terracota);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 0.8rem 0;
 }
 
-.footer_nav_container ol{
+.footer_nav_container ol {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-size: 0.6rem;
     list-style: none;
     padding: 0.8rem;
-    gap:0.6rem;
-    border: 2px solid var(--blue-dark);    
+    gap: 0.6rem;
+    border: 2px solid var(--blue-dark);
 }
 
-.nav_text{
+.nav_text {
     text-decoration: none;
     color: var(--blue-dark);
+    /* AGREGADO: transición hover nav footer */
+    transition: opacity 0.2s ease;
 }
 
-.footer_rights p{
-    margin: 0;
-    color:var(--blue-dark);
+/* AGREGADO: hover nav footer */
+.nav_text:hover {
+    opacity: 0.55;
 }
 
-@media
+/* ════════════════════════════
+   TABLET — min-width: 768px
+════════════════════════════ */
+@media (min-width: 768px) {
+
+    .header {
+        min-height: 35vh;
+    }
+
+    .header_title h1 {
+        font-size: 1.3rem;
+        padding: 1rem 1rem 0 2rem;
+    }
+
+    .header_subtitle p {
+        font-size: 1.2rem;
+        padding: 1.5rem 4rem;
+    }
+
+    .button_text {
+        font-size: 1.2rem;
+        padding: 0.7rem 2rem;
+    }
+
+    .header_image {
+        width: 8rem;
+        padding-bottom: 1rem;
+    }
+
+    .main_beneficios h2 {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .card {
+        margin: 2rem;
+        padding: 3rem 2rem;
+    }
+
+    .card_icon {
+        font-size: 3rem;
+    }
+
+    .card_title {
+        font-size: 1.5rem;
+    }
+
+    .card_description {
+        font-size: 1.4rem;
+    }
+
+    /* CORREGIDO: eliminado height: 12% que no funciona */
+    .footer {
+        padding: 1rem 2rem;
+    }
+
+    .footer_nav_container ol {
+        font-size: 1rem;
+        gap: 1rem;
+    }
+
+    /* CORREGIDO: eliminado font-size con padding incorrecto */
+    .footer_rights {
+        font-size: 1rem;
+    }
+}
+
+/* ════════════════════════════
+   DESKTOP — min-width: 1024px
+   AGREGADO: bloque limpio y sin duplicados
+════════════════════════════ */
+@media (min-width: 1024px) {
+
+    .header {
+        min-height: 50vh;
+    }
+
+    /* CORREGIDO: header en fila — texto a la izquierda, imagen a la derecha */
+    .header_container {
+        flex-direction: row;
+        justify-content: center;
+        padding: 3rem;
+    }
+
+    .header_central {
+        width: 55%;
+        padding-left: 3rem;
+        justify-content: center;
+    }
+
+    .header_title h1 {
+        /* CORREGIDO: había dos reglas de font-size en desktop (6rem y 1.3rem),
+           la segunda sobreescribía la primera. Dejamos un solo valor */
+        font-size: 2rem;
+        text-align: left;
+        padding: 0 0 0 2rem;
+    }
+
+    .header_subtitle p {
+        font-size: 1.1rem;
+        text-align: left;
+        padding-left: 2rem;
+        width: 85%;
+    }
+
+    .header_button {
+        justify-content: flex-start;
+        padding-left: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .button_text {
+        font-size: 1rem;
+        border-radius: 10px;
+        padding: 0.7rem 2rem;
+    }
+
+    .header_image {
+        width: 25%;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .main_beneficios h2 {
+        font-size: 1.6rem;
+        padding: 1rem 0;
+    }
+
+    /* AGREGADO: cards en fila horizontal en desktop */
+    .cards_beneficios {
+        flex-direction: row;
+        padding: 1.5rem 2rem;
+    }
+
+    .card {
+        flex: 1;
+        margin: 1rem;
+        padding: 3rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .card_icon {
+        font-size: 3.5rem;
+    }
+
+    .card_title {
+        font-size: 1.3rem;
+    }
+
+    .card_description {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    /* AGREGADO: footer en fila en desktop */
+    .footer_container {
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 1rem 3rem;
+    }
+
+    .footer_nav_container ol {
+        border: none;
+        padding: 0;
+        gap: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .footer_rights {
+        padding: 0;
+        font-size: 0.9rem;
+    }
+}

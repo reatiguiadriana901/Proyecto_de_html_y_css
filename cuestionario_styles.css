@@ -1,60 +1,71 @@
-:root{
-    --cherry:#a5f8df;
-    --blue-dark:#000022;
-    --white-old:#fcf6f0;
-    --blue-clear:#cd9ce0;
-    --Terracota:#d1b4d9;
-    --gris:#aa9da4;
-
+/* ════════════════════════════
+   VARIABLES Y RESET
+════════════════════════════ */
+:root {
+    --cherry: #a5f8df;
+    --blue-dark: #000022;
+    --white-old: #fcf6f0;
+    --blue-clear: #cd9ce0;
+    --Terracota: #d1b4d9;
+    --gris: #aa9da4;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
+/* ════════════════════════════
+   LAYOUT GENERAL
+════════════════════════════ */
 .grid_general {
+    min-height: 100vh;
     display: grid;
-    grid-template-areas: 
-    "header"
-    "main"
-    ;
-
+    /* CORREGIDO: agregado footer implícito y min-height para que ocupe toda la pantalla */
+    grid-template-areas:
+        "header"
+        "main";
+    grid-template-rows: auto 1fr;
 }
 
+/* ════════════════════════════
+   HEADER
+════════════════════════════ */
 .header {
     grid-area: header;
-    height: 18vh;
-    display:grid;
+    /* CORREGIDO: cambiado height fijo 18vh por min-height más padding para que respire */
+    min-height: 60px;
+    display: grid;
     grid-template-columns: 1fr 2fr;
     background-color: var(--Terracota);
-
+    align-items: center;
+    padding: 0.6rem 1rem;
 }
 
 .header_logo {
-    width: 30%;
-    background-color: var(--Terracota);
-    margin: 0 auto;
+    /* CORREGIDO: width fijo en px en lugar de % para consistencia */
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    margin: 0;
     background-image: url(./assets/logo.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-   
 }
 
-.nav_opciones ol{
+.nav_opciones ol {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 1rem;
     list-style: none;
-    padding-top: 3rem ;
-    padding-right: 1rem;
+    /* CORREGIDO: eliminado padding-top: 3rem que empujaba el nav hacia abajo */
+    padding: 0;
 }
 
-.nav_text{
+.nav_text {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
@@ -62,52 +73,69 @@
     font-size: 0.6rem;
     text-decoration: none;
     color: var(--blue-dark);
+    /* AGREGADO: transición hover */
+    transition: opacity 0.2s ease;
 }
 
-.nav_text_2{
+.nav_text:hover {
+    opacity: 0.6;
+}
+
+.nav_text_2 {
     text-decoration: none;
     font-size: 0.6rem;
-    color:black;
+    color: black;
     border: 2px solid var(--blue-dark);
-    padding: 0.3rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 10px;
-
+    /* AGREGADO: transición hover */
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-.main{
+.nav_text_2:hover {
+    background: var(--blue-dark);
+    color: var(--white-old);
+}
+
+/* ════════════════════════════
+   MAIN
+════════════════════════════ */
+.main {
     grid-area: main;
     background: var(--blue-dark);
-    width: auto;
-    height: 82vh;
-    display:flex;
+    width: 100%;
+    /* CORREGIDO: eliminado height: 90vh fijo, ahora usa min-height para crecer con el contenido */
+    min-height: calc(100vh - 60px);
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
-.main_container{
+.main_container {
     width: 95%;
-    height: 95%;
+    /* CORREGIDO: eliminado height: 95% que dependía del padre con altura fija */
     background-color: var(--white-old);
     border-radius: 10px;
+    padding-bottom: 1rem;
 }
 
-.main_pasos p{
+/* ── Pasos ── */
+.main_pasos p {
     font-size: 0.7rem;
     padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
-.pasos_seleccion{
+.pasos_seleccion {
     width: 100%;
     height: 2rem;
-    background: ;
-    display:flex;
+    display: flex;
     justify-content: space-around;
     align-items: center;
-    padding:1.5rem;
-
+    padding: 1.5rem;
 }
 
-.circulo1{
+.circulo1 {
     width: 0.9rem;
     height: 0.9rem;
     border-radius: 50%;
@@ -116,125 +144,373 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
-.circulo_interno{
+.circulo_interno {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
     background: var(--blue-dark);
 }
 
-.circulo{
+.circulo {
     width: 0.9rem;
     height: 0.9rem;
     border-radius: 50%;
     background-color: var(--white-old);
-    border: 2px solid var(--gris)
+    border: 2px solid var(--gris);
 }
 
-.linea1{
+.linea1 {
     height: 2px;
-    background-color:var(--blue-dark);
-    content:'';
-    flex:1;
+    background-color: var(--blue-dark);
+    content: '';
+    flex: 1;
 }
 
-.linea{
+.linea {
     height: 2px;
-    background-color:var(--blue-dark);
-    content:'';
-    flex:1;
+    content: '';
+    flex: 1;
     background-color: var(--gris);
 }
 
+/* ── Título ── */
 .main_title {
     text-align: center;
     font-size: 0.6rem;
     padding-bottom: 0.6rem;
 }
 
-.main_cards{
-    height: 51vh;
-    display:grid;
+/* ── Cards ── */
+.main_cards {
+    /* CORREGIDO: eliminado height: 51vh fijo */
+    display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     background: var(--white-old);
-    gap:1rem;
+    gap: 1rem;
     justify-items: center;
-    padding: 0.9rem 0rem 0.9rem 0rem;
-    
+    padding: 0.9rem 0;
 }
 
-.card{
+.card {
     width: 85%;
     background-color: var(--blue-dark);
     border: 3px solid var(--white-old);
     border-radius: 1.5rem;
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 2fr;
-    
-
+    /* AGREGADO: transición hover en cards */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    /* AGREGADO: altura mínima para que no se aplanen */
+    min-height: 90px;
 }
 
-.card_icon{
-    display:flex;
+/* AGREGADO: hover en cards */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 34, 0.35);
+}
+
+.card_icon {
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--Terracota);
-    border:3px solid var(--blue-dark);
+    border: 3px solid var(--blue-dark);
     border-radius: 1.5rem;
-    grid-row-end: auto;
-
 }
 
-.card_icon i{
-    font-size:3rem ;
+.card_icon i {
+    font-size: 3rem;
 }
 
-.card_text{
-    display:grid;
+.card_text {
+    display: grid;
     grid-template-rows: 0.5fr 1fr 1.5fr;
     color: var(--white-old);
 }
 
-.title_card{
+.title_card {
     font-size: 0.7rem;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-self: center;
-    
 }
 
-.text_card p{
+.text_card p {
     font-size: 0.8rem;
-    text-align: center;   
+    text-align: center;
 }
 
-
-.checkbox{
+.checkbox {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 1rem;
     padding-top: 0.4rem;
 }
 
-.buttons{
+/* AGREGADO: estilo al checkbox para que se vea más bonito */
+.checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--cherry);
+}
+
+/* ── Botones ── */
+.buttons {
     height: 3.6rem;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap:4rem;
+    gap: 4rem;
 }
 
-.button{
+.button {
     border: 2px solid var(--blue-dark);
     padding: 0.5rem;
-    border-radius:1rem ;
+    border-radius: 1rem;
     background-color: var(--Terracota);
+    /* AGREGADO: transición hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
 }
 
-.button_text{
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 34, 0.2);
+    background-color: var(--blue-clear);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.button_text {
     text-decoration: none;
     color: var(--blue-dark);
+}
+
+/* ════════════════════════════
+   TABLET — min-width: 768px
+════════════════════════════ */
+@media (min-width: 768px) {
+
+    .header {
+        min-height: 70px;
+        padding: 0.8rem 2rem;
+    }
+
+    .header_logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav_opciones ol {
+        gap: 1.5rem;
+        justify-content: flex-end;
+    }
+
+    .nav_text {
+        font-size: 1rem;
+    }
+
+    .nav_text_2 {
+        font-size: 1rem;
+    }
+
+    .main_pasos p {
+        font-size: 1.2rem;
+    }
+
+    .main_title {
+        font-size: 1rem;
+    }
+
+    .main_title h1 {
+        font-size: 1.6rem;
+    }
+
+    /* CORREGIDO tablet: las cards ahora tienen altura mínima real */
+    .main_cards {
+        gap: 1.2rem;
+        padding: 1.2rem 0;
+    }
+
+    .card {
+        min-height: 110px;
+    }
+
+    .card_icon i {
+        font-size: 3.5rem;
+    }
+
+    .title_card h2 {
+        font-size: 1.4rem;
+    }
+
+    .text_card p {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        padding-top: 1.5rem;
+        height: auto;
+        padding-bottom: 1rem;
+    }
+
+    .button {
+        padding: 1rem 2rem;
+    }
+
+    .button_text {
+        font-size: 1.5rem;
+    }
+}
+
+/* ════════════════════════════
+   DESKTOP — min-width: 1024px
+════════════════════════════ */
+@media (min-width: 1024px) {
+
+    .header {
+        min-height: 80px;
+        padding: 0 3rem;
+    }
+
+    .header_logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .nav_opciones ol {
+        gap: 2rem;
+    }
+
+    .nav_text {
+        font-size: 1.1rem;
+    }
+
+    .nav_text_2 {
+        font-size: 1.1rem;
+        padding: 0.4rem 0.9rem;
+    }
+
+    .main {
+        padding: 2rem;
+    }
+
+    .main_container {
+        max-width: 950px;
+        width: 85%;
+        margin: 0 auto;
+        padding-bottom: 2.5rem;
+    }
+
+    .main_pasos p {
+        font-size: 1.2rem;
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    .pasos_seleccion {
+        padding: 1.5rem 2rem;
+    }
+
+    .circulo1,
+    .circulo {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .circulo_interno {
+        width: 0.65rem;
+        height: 0.65rem;
+    }
+
+    .main_title h1 {
+        font-size: 2.2rem;
+        padding: 1.2rem 0 0.5rem 0;
+    }
+
+    /* CAMBIADO: cards en fila horizontal de 3 columnas */
+    .main_cards {
+        grid-template-rows: unset;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+    }
+
+    /* CAMBIADO: card vertical — ícono arriba, texto abajo */
+    .card {
+        grid-template-columns: unset;
+        grid-template-rows: 1fr auto;
+        min-height: 260px;
+        border-radius: 1.2rem;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    /* CAMBIADO: ícono ocupa la mitad superior */
+    .card_icon {
+        border-radius: 1.2rem 1.2rem 0 0;
+        padding: 2rem 0;
+        border-radius: 1.2rem 1.2rem 0 0;
+        border: none;
+        border-bottom: 3px solid var(--blue-dark);
+    }
+
+    .card_icon i {
+        font-size: 4rem;
+    }
+
+    /* CAMBIADO: texto ocupa la mitad inferior */
+    .card_text {
+        grid-template-rows: auto 1fr auto;
+        padding: 0.8rem 0.5rem 1rem 0.5rem;
+        gap: 0.3rem;
+    }
+
+    .checkbox {
+        justify-content: flex-end;
+        margin-right: 0.8rem;
+        padding-top: 0.3rem;
+    }
+
+    .title_card {
+        justify-content: center;
+    }
+
+    .title_card h2 {
+        font-size: 1.5rem;
+    }
+
+    .text_card p {
+        font-size: 1.1rem;
+        padding: 0 0.5rem;
+    }
+
+    /* CAMBIADO: botones anchos como en la plantilla */
+    .buttons {
+        padding: 1.5rem 2rem 0.5rem 2rem;
+        gap: 1.5rem;
+        height: auto;
+    }
+
+    .button {
+        flex: 1;
+        text-align: center;
+        padding: 1.1rem 0;
+        border-radius: 0.8rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .button_text {
+        font-size: 1.3rem;
+        width: 100%;
+        text-align: center;
+    }
 }
