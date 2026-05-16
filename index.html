@@ -3,52 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>inicial</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Diplomata&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <header class="header">
         <section class="header_container">
             <div class="header_central">
-                <div class="header_title"><h1>Estime el Costo de su Proyecto de Software</h1></div>
+                <div class="header_title"><h1>Estime el Costo de su Proyecto de Software al instante.</h1></div>
                 <div class="header_subtitle"><p>Obtenga una Previsión precisa y transparente para impulsar su desarrollo digital</p></div> 
-                <div class="header_button"><button>comenzar</button></div>
+                <div class="header_button"><a href="./cuestionario.html" target="_self" class="button_text">comenzar</a></div>
             </div>
         
-            <div class="header_image"><img src="./assets/calculo.png"></div>
+            <div class="header_image"><img src="./assets/imagen.png" class="img"></div>
         </section>
     </header>
 
 
     <main class="main">
         <section class="main_container">
-            <div class="main_beneficios"><h2>Beneficios Clave</h2></div>
-            <div class="cards_beneficios">
-                <div class="card">
-                    <div class="card_icon"><i class="fa-solid fa-gear"></i></div>
-                    <div class="card_title"><h3>Precisión Inigualable:</h3></div>
-                    <div class="card_description"><p>Algoritmos avanzados para cálculos exactos</p></div>
-                </div>
-                <div class="card">
-                    <div class="card_icon"><i class="fa-solid fa-clock"></i></i></div>
-                    <div class="card_title"><h3>Resultados Rápidos:</h3></div>
-                    <div class="card_description"><p>Ahorre tiempo con estimaciones en minutos</p></div>
+            <div clase="containerflex">
+                <section class="main_beneficios"><h2>Beneficios Clave</h2></div>
+                    <section class="cards_beneficios">
+                        <div class="card">
+                            <span class="card_icon"><i class="fa-solid fa-bullseye"></i></span>
+                            <div class="card_title"><h3>Precisión Inigualable:</h3></div>
+                            <div class="card_description"><p>Algoritmos avanzados para cálculos exactos</p></div>
+                        </div>
+                        <div class="card">
+                            <span class="card_icon"><i class="fa-solid fa-bolt"></i></span>
+                            <div class="card_title"><h3>Resultados Rápidos:</h3></div>
+                            <div class="card_description"><p>Ahorre tiempo con estimaciones en minutos</p></div>
 
-                 </div>
-                 <div class="card">
-                    <div class="card_icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="card_title"><h3>Transparencia Total:</h3></div>
-                    <div class="card_description"><p>Sin costo ocultos, desglose detallado</p></div>
-                </div>
+                        </div>
+                        <div class="card">
+                            <span class="card_icon"><i class="fa-solid fa-eye"></i></span>
+                            <div class="card_title"><h3>Transparencia Total:</h3></div>
+                            <div class="card_description"><p>Sin costo ocultos, desglose detallado</p></div>
+                        </section>
+                </section>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <section class="footer_container">
-            <div class="footer_nav">
+            <nav class="footer_nav">
                <nav class="footer_nav_container">
                 <ol>
                     <li><a href="./hola.html" target="_self" class="nav_text">Inicio</a></li>
@@ -59,10 +64,11 @@
                     <li><a href="./hola.html" target="_self" class="nav_text">Términos</a></li>
                 </ol>
                </nav>
-            </div>
-            <div class="footer_rights">
+            </nav>
+    
+            <section class="footer_rights">
                 <p>&copy; 2026 Adriana Reatigui. Todos los derechos reservados.</p>
-            </div>
+            </section>
         </section>
     </footer>
 </body>
